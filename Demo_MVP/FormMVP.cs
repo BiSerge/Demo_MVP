@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Demo_MVP
@@ -44,7 +37,13 @@ namespace Demo_MVP
         /// </summary>
         public double InputDegree
         {
-            get { return Convert.ToDouble(_inputBox.Text); }
+            get
+            {
+                if (_inputBox.Text != "")
+                    return Convert.ToDouble(_inputBox.Text);
+                else
+                    return 0;
+            }
         }
 
         #endregion
